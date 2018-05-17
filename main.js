@@ -51,6 +51,12 @@ function removeFromList(ev){
     const list = ev.path[2]
     list.removeChild(removeItem)
 
+    //remove from array
+    const removeArrayEle = ev.path[1].firstChild.textContent.trim()
+
+    const i = movieArray.indexOf(removeArrayEle)
+    movieArray.splice(i,1)    
+
     return list
 
 }
